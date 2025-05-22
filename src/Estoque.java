@@ -1,25 +1,15 @@
 public class Estoque {
-    private Produto produto;
-    private int quantidade;
+    private Produto[] produto;
 
-    public Estoque(Produto produto, int quantidade) {
-        this.produto = produto;
-        this.quantidade = quantidade;
+    public Estoque(int quantidadeProdutos) {
+        this.produto = new Produto[quantidadeProdutos];
     }
 
-    public Produto getProduto() {
+    public Produto[] getProduto() {
         return produto;
     }
 
-    public void setProduto(Produto produto) {
+    public void setProduto(Produto[] produto) {
         this.produto = produto;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
     }
 }
