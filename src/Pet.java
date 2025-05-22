@@ -1,13 +1,11 @@
 public class Pet {
     private String nome, raca;
     private int idade;
-    private char sexo;
 
-    public Pet(String nome, String raca, int idade, char sexo) {
+    public Pet(String nome, String raca, int idade) {
         this.nome = nome;
         this.raca = raca;
         this.idade = idade;
-        this.sexo = sexo;
     }
 
     public String getNome() {
@@ -34,11 +32,14 @@ public class Pet {
         this.idade = idade;
     }
 
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
+    public String toString() {
+        if(idade < 1) {
+            return "Nome do Pet: "+nome+
+                   "\nRaça: "+raca+
+                   "\nIdade: menos de 1 ano";
+        }
+        return "Nome do Pet: "+nome+
+               "\nRaça: "+raca+
+               "\nIdade: "+idade+" anos";
     }
 }

@@ -1,8 +1,7 @@
 public class Endereco {
-    private String rua, cidade, estado, pais, cep, complemento;
-    private int numero;
+    private String rua, cidade, estado, pais, cep, numero, complemento;
 
-    public Endereco(String rua, String cidade, String estado, String pais, String cep, int numero, String complemento) {
+    public Endereco(String rua, String cidade, String estado, String pais, String cep, String numero, String complemento) {
         this.rua = rua;
         this.cidade = cidade;
         this.estado = estado;
@@ -24,7 +23,7 @@ public class Endereco {
         return cidade;
     }
 
-    public void setCidade(String cidade) {
+    public void setCidade() {
         this.cidade = cidade;
     }
 
@@ -52,11 +51,11 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -66,5 +65,11 @@ public class Endereco {
 
     public void setComplemento(String complemento) {
         this.complemento = complemento;
+    }
+
+    public String toString() {
+        return "\n-- Endereço --"+
+               "\nRua: "+rua+"\nCidade: "+cidade+"\nPaís: "+pais+
+               "\nCEP: "+cep+"\nNúmero: "+numero+"\nComplemento: "+complemento;
     }
 }
