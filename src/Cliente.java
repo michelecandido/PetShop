@@ -3,28 +3,31 @@ public class Cliente {
     private Endereco endereco;
     private Pet[] pets;
 
-    public Cliente(String nome, Endereco endereco) {
+    public Cliente(String nome, Endereco endereco, int quantPets) {
         this.nome = nome;
         this.endereco = endereco;
-        this.pets = new Pet[0];
+        this.pets = new Pet[quantPets];
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public Pet[] getPets() {
+        return pets;
     }
 
-    public void adicionarPet(Pet pet) {
+    public boolean addPets(Pet petNovo) {
+        for(int i = 0; i < pets.length; i++) {
+            if(pets[i] == null) {
+                pets[i] = petNovo;
+                return true;
+            }
+        }
+        return false;
     }
 }
