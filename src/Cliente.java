@@ -2,11 +2,13 @@ public class Cliente {
     private String nome;
     private Endereco endereco;
     private Pet[] pets;
+    private int totalPets;
 
     public Cliente(String nome, Endereco endereco, int quantPets) {
         this.nome = nome;
         this.endereco = endereco;
         this.pets = new Pet[quantPets];
+        this.totalPets = 0;
     }
 
     public String getNome() {
@@ -21,13 +23,10 @@ public class Cliente {
         return pets;
     }
 
-    public boolean addPets(Pet petNovo) {
-        for(int i = 0; i < pets.length; i++) {
-            if(pets[i] == null) {
-                pets[i] = petNovo;
-                return true;
-            }
+    public void addPets(Pet petNovo) {
+        if(totalPets < pets.length) {
+            pets[totalPets] = petNovo;
+            totalPets++;
         }
-        return false;
     }
 }
